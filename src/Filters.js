@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Form, Segment} from 'semantic-ui-react';
-import 'react-datepicker/dist/react-datepicker.css';
 
 class Filters extends Component {
-
-
   render() {
     const {availableLanguages, handleChange, handleApplyFilters} = this.props;
 
