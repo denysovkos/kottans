@@ -33,7 +33,7 @@ class Dialog extends Component {
   render() {
     const {modalOpen, currentRepo, handleCloseModal} = this.props;
     const {contributors_url, languages_url} = this.state;
-    
+
     return (
       <Modal size='fullscreen'
         open={modalOpen}
