@@ -15,7 +15,6 @@ class Dialog extends Component {
   componentWillReceiveProps(nextProps) {
     const {currentRepo, modalOpen} = nextProps;
     if(modalOpen) {
-      console.log('func call')
       this.getData(currentRepo.contributors_url, 'contributors_url');
       this.getData(currentRepo.languages_url, 'languages_url');
     }
@@ -23,7 +22,6 @@ class Dialog extends Component {
 
 
   getData(link, name) {
-    console.log('func call getData')
     fetch(link)
       .then(data => data.json())
       .then(data => this.setState({[name]: data}))
@@ -49,7 +47,7 @@ class Dialog extends Component {
                     <Card.Content>
                       <Image floated='right' size='mini' src={v.avatar_url} />
                       <Card.Header>
-                        <a href={v.html_url}>Steve Sanders</a> | {v.contributions}
+                        <a href={v.html_url}>{v.login}</a> | {v.contributions}
                       </Card.Header>
                     </Card.Content>
                   </Card>
